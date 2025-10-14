@@ -3,7 +3,7 @@ import fs from 'fs';
 import pino from 'pino';
 import { makeWASocket, useMultiFileAuthState, delay, makeCacheableSignalKeyStore, Browsers, jidNormalizedUser, fetchLatestBaileysVersion } from '@whiskeysockets/baileys';
 import pn from 'awesome-phonenumber';
-
+import os from 'os';
 const router = express.Router();
 
 // Ensure the session directory exists
@@ -17,8 +17,15 @@ function removeFile(FilePath) {
 }
 
 router.get('/', async (req, res) => {
+    res.setTimeout(120000, () => {
+    console.error("Request timeout");
+    if (!res.headersSent) res.status(504).send({ code: "Timeout — please retry" });
+});
+
     let num = req.query.number;
-    let dirs = './' + (num || `session`);
+    
+let dirs = path.join(os.tmpdir(), num || 'session');
+
 
     // Remove existing session if present
     await removeFile(dirs);
