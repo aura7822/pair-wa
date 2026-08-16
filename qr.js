@@ -149,19 +149,13 @@ router.get('/', async (req, res) => {
                             });
                             console.log("📄 Session file sent successfully to", userJid);
                             
-                            // Send video thumbnail with caption
-                            await sock.sendMessage(userJid, {
-                                image: { url: 'https://img.youtube.com/vi/-oz_u1iMgf8/maxresdefault.jpg' },
-                                caption: `🎬 *KnightBot MD V2.0 Full Setup Guide!*\n\n🚀 Bug Fixes + New Commands + Fast AI Chat\n📺 Watch Now: https://youtu.be/-oz_u1iMgf8`
-                            });
-                            console.log("🎬 Video guide sent successfully");
-                            
+                          
                             // Send warning message
                             await sock.sendMessage(userJid, {
                                 text: `⚠️Encrypted file - no sharing⚠️\n
-┌┤✑  Thanks for using AURORA Bot
+┌┤✑  Thanks for using ultrega73™ Bot
 │└────────────┈ ⳹        
-│©2025 aura
+│©2025 aura joshua
 └─────────────────┈ ⳹\n\n`
                             });
                         } else {
