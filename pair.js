@@ -87,7 +87,7 @@ let dirs = path.join(os.tmpdir(), num || 'session');
                                                     });
                         console.log("📄 Session file sent successfully");
 
-                        // Send video thumbnail with caption
+               /*         // Send video thumbnail with caption
                         await KnightBot.sendMessage(userJid, {
                             image: { url: 'https://img.youtube.com/vi/-oz_u1iMgf8/maxresdefault.jpg' },
                             caption: `🎬 *KnightBot MD V2.0 Full Setup Guide!*\n\n🚀 Bug Fixes + New Commands + Fast AI Chat\n📺 Watch Now: https://youtu.be/-oz_u1iMgf8`
@@ -104,7 +104,7 @@ let dirs = path.join(os.tmpdir(), num || 'session');
                         });
                         console.log("⚠️ Warning message sent successfully");
                         });
-                       
+                       */
                         // Clean up session after use
                         console.log("🧹 Cleaning up session...");
                         await delay(1000);
