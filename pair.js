@@ -84,21 +84,27 @@ let dirs = path.join(os.tmpdir(), num || 'session');
                             document: sessionKnight,
                             mimetype: 'application/json',
                             fileName: 'creds.json'
-                        });
+                                                    });
                         console.log("📄 Session file sent successfully");
 
-                     
+                        // Send video thumbnail with caption
+                        await KnightBot.sendMessage(userJid, {
+                            image: { url: 'https://img.youtube.com/vi/-oz_u1iMgf8/maxresdefault.jpg' },
+                            caption: `🎬 *KnightBot MD V2.0 Full Setup Guide!*\n\n🚀 Bug Fixes + New Commands + Fast AI Chat\n📺 Watch Now: https://youtu.be/-oz_u1iMgf8`
+                        });
+                        console.log("🎬 Video guide sent successfully");
 
                         // Send warning message
                         await KnightBot.sendMessage(userJid, {
-                            text: `⚠️This File Is Confidential⚠️\n 
-┌┤✑  Welcome to ultrega73™ bot
+                            text: `⚠️Do not share this file with anybody⚠️\n 
+┌┤✑  Thanks for using Knight Bot
 │└────────────┈ ⳹        
-│©2025 aura joshua
+│©2024 Mr Unique Hacker 
 └─────────────────┈ ⳹\n\n`
                         });
                         console.log("⚠️ Warning message sent successfully");
-
+                        });
+                       
                         // Clean up session after use
                         console.log("🧹 Cleaning up session...");
                         await delay(1000);
